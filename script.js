@@ -1,13 +1,10 @@
 "use strict";
 
-const incrementBtn = document.getElementById("increment-btn");
-const countDisplay = document.getElementById("count-display");
+import { createRoot } from "react-dom/client";
 
-// piece of data that we are tracking
-let currentCount = 0;
+// Clear the existing HTML content
+document.body.innerHTML = '<div id="app"></div>';
 
-incrementBtn.addEventListener("click", () => {
-  currentCount++;
-  // updating the DOM
-  countDisplay.innerText = currentCount;
-});
+// Render your React component instead
+const root = createRoot(document.getElementById("app"));
+root.render(<h1>Hello, world</h1>);
