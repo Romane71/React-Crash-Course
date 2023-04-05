@@ -26,15 +26,21 @@ import Tasks from './components/Tasks'
         }
     ])
     
- return (
- <div className='container'>
-  <Header />
-  <Tasks tasks={tasks} />
+    // Delete task
 
-  </div>
- )
- }
+     const deleteTask =(id) => {
+       setTasks(tasks.filter((task) => task.id !== id))
+     }
 
 
+     return (
+        <div className='container'>
+            <Header />
+            {tasks.length > 0 ? (
+                <Tasks tasks={tasks} onDelete= {deleteTask} /> ) : ('No Tasks to Show')
+            }
+        </div>
+     )
+        }
 
-export default App;
+export default App
