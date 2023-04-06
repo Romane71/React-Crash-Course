@@ -26,7 +26,13 @@ import AddTask from './components/AddTask'
             reminder: false,
         }
     ])
-    
+    // Add task
+const addTask = (task) => {
+    const id = Math.floor(Math.random() * 10000 ) + 1
+   const newTask = {id, ...task}
+   setTasks([...task, newTask])
+}
+
     // Delete task
 
      const deleteTask =(id) => {
@@ -45,7 +51,7 @@ import AddTask from './components/AddTask'
      return (
         <div className='container'>
             <Header />
-            <AddTask />
+            <AddTask onAdd ={addTask}/>
             {tasks.length > 0 ? (
                 <Tasks tasks={tasks} onDelete= {deleteTask} onToggle={toggleReminder} /> ) : ('No Tasks to Show')
             }
