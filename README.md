@@ -1,2 +1,2 @@
-# React-Crash-Course - Finish
+# React-Crash-Course - Finished
 
